@@ -1,0 +1,65 @@
+O projeto "Sistema de Registro de Alunos e Notas" é um sistema de gerenciamento de dados desenvolvido em SQL para uma instituição de ensino. O sistema é projetado para registrar informações sobre alunos, cursos e as notas atribuídas aos alunos em diferentes cursos. Ele permite a criação de um banco de dados relacional, tabelas associadas, e executa operações básicas de inserção, consulta, atualização e exclusão de dados.
+
+
+# Sistema de Registro de Alunos e Notas
+
+Este repositório contém o código SQL para um sistema de gerenciamento de registros de alunos e suas notas em diversos cursos. O sistema foi desenvolvido para gerenciar informações de alunos, cursos e notas utilizando um banco de dados relacional.
+
+## Estrutura do Projeto
+
+### Criação do Banco de Dados
+
+O banco de dados é criado com o nome `Escola`. As tabelas seguintes são criadas dentro deste banco:
+
+1. **Alunos**: Contém informações sobre os alunos.
+2. **Cursos**: Contém informações sobre os cursos disponíveis.
+3. **Notas**: Registra as notas atribuídas aos alunos em diferentes cursos.
+
+### Tabelas
+
+- **Alunos**: 
+  - `id_aluno` (INT, auto-incremento, chave primária)
+  - `nome` (VARCHAR(100))
+  - `data_nascimento` (DATE)
+  - `endereco` (VARCHAR(255))
+
+- **Cursos**: 
+  - `id_curso` (INT, auto-incremento, chave primária)
+  - `nome_curso` (VARCHAR(100))
+  - `descricao` (TEXT)
+
+- **Notas**: 
+  - `id_nota` (INT, auto-incremento, chave primária)
+  - `id_aluno` (INT, chave estrangeira referenciando `Alunos`)
+  - `id_curso` (INT, chave estrangeira referenciando `Cursos`)
+  - `nota` (DECIMAL(5, 2))
+
+### Operações
+
+- **Inserção de Dados**: Adiciona registros de alunos, cursos e notas.
+- **Consultas**:
+  - Lista todos os alunos e suas notas por curso.
+  - Calcula a média das notas para cada curso.
+  - Encontra o aluno com a maior nota em cada curso.
+- **Atualização de Dados**:
+  - Atualiza a nota de um aluno em um curso específico.
+  - Modifica o endereço de um aluno.
+- **Exclusão de Dados**:
+  - Exclui um aluno e suas notas associadas.
+  - Remove um curso e todas as notas associadas a esse curso.
+
+## Executando o Código
+
+Para executar o código SQL, utilize um ambiente de banco de dados relacional como MySQL, PostgreSQL, ou qualquer outro que suporte SQL. Execute o script SQL em um cliente de banco de dados para criar o banco de dados, tabelas, e inserir dados.
+
+## Arquivos
+
+- `escola.sql`: Contém todo o código SQL necessário para criar o banco de dados, tabelas, inserir dados, e executar consultas.
+
+## Contribuição
+
+Se você quiser contribuir para este projeto, por favor, faça um fork do repositório e envie um pull request com suas melhorias ou correções.
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
